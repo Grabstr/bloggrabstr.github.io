@@ -1,0 +1,45 @@
+# Permalinks
+#
+# Use of `relative_permalinks` ensures post links from the index work properly.
+permalink:           pretty
+relative_permalinks: true
+
+# Setup
+title:               Grabstr Blog
+tagline:             Stories of code | Market Segmentation | Business Analytics.
+url:                 http://grabstr.github.io
+paginate:            10
+baseurl:             ""
+
+# Assets
+#
+# We specify the directory for Jekyll so we can use @imports.
+sass:
+  sass_dir:          _sass
+  style:            :compressed
+
+# About/contact
+author:
+  name:              Mark Otto
+  url:               https://twitter.com/mdo
+  email:             markdotto@gmail.com
+
+# Custom vars
+version:             1.0.0
+github:
+  repo:              https://github.com/poole/poole
+
+# Authors
+authors:
+  chinmayrane:
+    display_name: Chinmay Rane
+    email: chinmayrane17@gmail.com
+    web: 
+    twitter: allabovengeance
+    github: chinmayrane
+  rohitlala:
+    display_name: Rohit Lala
+    email: rohitlala@gmail.com
+    web: 
+    twitter: rohitlala9
+    github: rohitlala		

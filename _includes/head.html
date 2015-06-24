@@ -1,0 +1,88 @@
+<head>
+  <meta charset="UTF-8">
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    {% if page.title == "Home" %}
+      {{ site.title }} &middot; {{ site.tagline }}
+    {% else %}
+      {{ page.title }} &middot; {{ site.title }}
+    {% endif %}
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ site.baseurl }}/styles.css">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ site.baseurl }}/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="{{ site.baseurl }}/public/favicon.ico">
+
+  <!-- RSS -->	
+  <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ site.baseurl }}/atom.xml">
+  
+  <!-- OG Tags -->
+  <meta content="{{ site.title }}" property="og:site_name">
+  {% if page.title %}
+    <meta content="{{ page.title }}" property="og:title">
+  {% else %}
+    <meta content="{{ site.title }}" property="og:title">
+  {% endif %}
+  {% if page.title %}
+    <meta content="article" property="og:type">
+  {% else %}
+    <meta content="website" property="og:type">
+  {% endif %}
+  {% if page.description %}
+    <meta content="{{ page.description }}" property="og:description">
+  {% else %}
+    <meta content="{{ site.description }}" property="og:description">
+  {% endif %}
+  {% if page.url %}
+    <meta content="{{ site.url }}{{ page.url }}" property="og:url">
+  {% endif %}
+  {% if page.date %}
+    <meta content="{{ page.date | date_to_xmlschema }}" property="article:published_time">
+    <meta content="{{ site.url }}/about/" property="article:author">
+  {% endif %}
+  {% if page.image %}
+    <meta content="/img/srcset/{{ page.image }}" property="og:image">
+  {% else %}
+    <meta content="{{ site.url }}/public/logo.png" property="og:image">
+  {% endif %}
+  {% if page.categories %}
+    {% for category in page.categories limit:1 %}
+    <meta content="{{ category }}" property="article:section">
+    {% endfor %}
+  {% endif %}
+  {% if page.tags %}
+    {% for tag in page.tags %}
+    <meta content="{{ tag }}" property="article:tag">
+    {% endfor %}
+  {% endif %}
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@grasbtr_engg">
+  <meta name="twitter:creator" content="@grabstr_engg">
+  {% if page.title %}
+    <meta name="twitter:title" content="{{ page.title }}">
+  {% else %}
+    <meta name="twitter:title" content="{{ site.title }}">
+  {% endif %}
+  {% if page.url %}
+    <meta name="twitter:url" content="{{ site.url }}{{ page.url }}">
+  {% endif %}
+  {% if page.description %}
+    <meta name="twitter:description" content="{{ page.description }}">
+  {% else %}
+    <meta name="twitter:description" content="{{ site.description }}">
+  {% endif %}
+  {% if page.image %}
+    <meta name="twitter:image:src" content="{{ site.url }}/path/to/image/{{ page.image }}">
+  {% else %}
+    <meta name="twitter:image:src" content="{{ site.url }}/public/logo.png">
+  {% endif %}
+</head>
